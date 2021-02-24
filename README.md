@@ -11,7 +11,7 @@ otro formato tendría que modificar `getText()` de la clase [***FactoryTextServi
 
 ## Solution 
 
-Se removio la clase [***FactoryTextService***](https://github.com/edfern/principios-SOLID/blob/open-closed-principle-problem/src/main/java/gt/edu/umg/priciple/solid/model/service/FactoryTextService.java) y creamos una nueva clase [TextFormatService]() con el metodo
+Se removio la clase [***FactoryTextService***](https://github.com/edfern/principios-SOLID/blob/open-closed-principle-problem/src/main/java/gt/edu/umg/priciple/solid/model/service/FactoryTextService.java) y creamos una nueva clase [TextFormatService](https://github.com/edfern/principios-SOLID/blob/open-closed-principle-solution/src/main/java/gt/edu/umg/priciple/solid/model/service/TextFormatService.java) con el metodo
 `getFormat()` con esto podemos agregar nuevos formatos sin modificar el modulo `TextFormatService`. 
 Cualquier nueva operación encajará fácilmente. Por ejemplo, el formato `txt`.
 
