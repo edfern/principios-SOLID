@@ -9,12 +9,12 @@ _Este principio establece que un modulo debe de estar abierto a la `extensión` 
 Como vimos en [Open/Closed Principle PROBLEM]() no cumplia con este principio ya que al momento de implementar 
 otro formato tendría que modificar `getText()` de la clase [***FactoryTextService***](https://github.com/edfern/principios-SOLID/blob/open-closed-principle-problem/src/main/java/gt/edu/umg/priciple/solid/model/service/FactoryTextService.java).
 
-##Solution 
+## Solution 
 
 Se removio la clase [***FactoryTextService***](https://github.com/edfern/principios-SOLID/blob/open-closed-principle-problem/src/main/java/gt/edu/umg/priciple/solid/model/service/FactoryTextService.java) y creamos una nueva clase [TextFormatService]() con el metodo
 `getFormat()` con esto podemos agregar nuevos formatos sin modificar el modulo `TextFormatService`. 
 Cualquier nueva operación encajará fácilmente. Por ejemplo, el formato `txt`.
 
-##Conclution
+## Conclution
 El principio open-closed es una guía para el diseño general de clases e interfaces y cómo los desarrolladores pueden construir código que permita cambios con el tiempo.
 
