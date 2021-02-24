@@ -1,9 +1,6 @@
 package gt.edu.umg.priciple.solid.controller;
 
-import gt.edu.umg.priciple.solid.model.service.FactoryTextService;
-import gt.edu.umg.priciple.solid.model.service.TextCsv;
-import gt.edu.umg.priciple.solid.model.service.TextHtml;
-import gt.edu.umg.priciple.solid.model.service.TextJson;
+import gt.edu.umg.priciple.solid.model.service.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,18 +17,23 @@ public class TextController {
     }
     @GetMapping("/json")
     public String getFileJson(@RequestParam String text) {
-        FactoryTextService factory = new FactoryTextService();
-        return factory.getText(new TextJson(),text);
+        TextFormatService factory = new TextFormatService();
+        return factory.getFormat(new TextJson(),text);
     }
     @GetMapping("/html")
     public String getFileHtml(@RequestParam String text){
-        FactoryTextService factory = new FactoryTextService();
-        return factory.getText(new TextHtml(),text);
+        TextFormatService factory = new TextFormatService();
+        return factory.getFormat(new TextHtml(),text);
     }
     @GetMapping("/csv")
     public String getFileCsv(@RequestParam String text){
-        FactoryTextService factory = new FactoryTextService();
-        return factory.getText(new TextCsv(),text);
+        TextFormatService factory = new TextFormatService();
+        return factory.getFormat(new TextCsv(),text);
+    }
+    @GetMapping("/txt")
+    public String getFileTxt(@RequestParam String text){
+        TextFormatService factory = new TextFormatService();
+        return factory.getFormat(new TextTxt(),text);
     }
 
 }
