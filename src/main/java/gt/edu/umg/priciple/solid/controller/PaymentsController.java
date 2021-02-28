@@ -16,7 +16,8 @@ public class PaymentsController {
     }
     @GetMapping("/toPay")
     public String getFileJson() {
-        KidEntity kid = new KidEntity("DeveloperJr","FullStack");
+        AdultEntity adult = new AdultEntity("Jhon W.","Smith Smith","78555478-***","75554-5");
+        KidEntity kid = new KidEntity("DeveloperJr","FullStack",adult);
         return kid.toPay();
     }
 
