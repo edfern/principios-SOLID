@@ -6,7 +6,7 @@ sin alterar el comportamiento esperado en el programa.
 
 ## Solution
 Podemos aplicar el Principio de Substitución de Liskov de forma estricta y rediseñar nuestra jerarquía de clases. Vamos a verlo:
-![alt text](https://raw.githubusercontent.com/edfern/principios-SOLID/liskov-substitution-principle-problem/Class%20Diagram/liskov-substitution-principle-PROBLEM.png)
+![alt text](https://raw.githubusercontent.com/edfern/principios-SOLID/liskov-substitution-principle-solution/Class%20Diagram/liskov-substitution-principle-SOLUTION.png)
 
 En este caso hemos redefinido el concepto de `PersonEntity` para incluir menos información. 
 Ahora sí el niño es una Persona ya que siempre tiene **_nombres_** y **_apellidos_**. 
