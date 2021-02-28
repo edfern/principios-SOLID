@@ -1,6 +1,6 @@
 package gt.edu.umg.priciple.solid.model;
 
-public class UserApp extends Person implements ISecurityPermission{
+public class UserApp extends Person implements IUserPermission{
 
 
     public UserApp(String name, String surName, String phone) {
@@ -8,19 +8,9 @@ public class UserApp extends Person implements ISecurityPermission{
 
     }
 
-
-    @Override
-    public String writePermission() {
-        return "WRITE";
-    }
-
     @Override
     public String readPermission() {
-        return null;
+        return "READ";
     }
 
-    @Override
-    public String deletionPermission() {
-        return null;
-    }
 }

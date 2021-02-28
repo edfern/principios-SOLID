@@ -1,7 +1,7 @@
 package gt.edu.umg.priciple.solid.model;
 
 
-public class AdminApp extends Person implements ISecurityPermission{
+public class AdminApp extends Person implements IAdminPermission{
 
     /**
      * Default constructor

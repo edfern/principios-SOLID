@@ -24,9 +24,9 @@ public class PermissionController {
         AdminApp admin = new AdminApp("DeveloperJr","FullStack","56889898","example@gmail.com");
         TechnicalApp technical = new TechnicalApp("Strange","Bolton","78445458","example@gmail.com");
         return switch (type) {
-            case "user" -> "Estos son sus permisos: " + "[" + user.writePermission() + "-" + user.readPermission() + "-" + user.deletionPermission() + "]";
+            case "user" -> "Estos son sus permisos: " + "[" + user.readPermission()  + "]";
             case "admin" -> "Estos son sus permisos: " + "[" + admin.writePermission() + "-" + admin.readPermission() + "-" + admin.deletionPermission() + "]";
-            case "technical" -> "Estos son sus permisos: " + "[" + technical.writePermission() + "-" + technical.readPermission() + "-" + technical.deletionPermission() + "]";
+            case "technical" -> "Estos son sus permisos: " + "[" + technical.writePermission() + "-" + technical.readPermission() + "]";
             default -> "error";
         };
     }

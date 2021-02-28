@@ -1,7 +1,7 @@
 package gt.edu.umg.priciple.solid.model;
 
 
-public class Person {
+public abstract class Person {
 
     public Person(String name, String surName, String phone) {
         this.name = name;

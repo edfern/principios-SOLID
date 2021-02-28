@@ -1,4 +1,4 @@
-# Interface Segregation Principle PROBLEM
+# Interface Segregation Principle SOLUTION
 
 _Las interfaces juegan un papel importante en el lenguaje de programación Java y se usan ampliamente para abstracción y para soportar múltiples herencias._
 
@@ -6,15 +6,15 @@ En el principio de segregación de interfaces, la interfaz no debe tener método
 
 El Principio de Segregación de Interfaces sugiere segregar una interfaz en interfaces más pequeñas y altamente cohesivas , conocidas como "interfaces de función" y cada "interfaz de función" declara uno o más métodos para un comportamiento específico. Por lo tanto, los clientes, en lugar de implementar una interfaz, implementa solo aquellas "interfaces de función" cuyos métodos son relevantes.
 
-Esta aplicación le asigna permisos a los diferentes usuarios que soporta
-`Admin`, `User` y `Technical` cada usuario tendrá permisos específicos.
-* El administrador puede leer, escribir y borrar.
-* El usuario puede leer.
-* El Técnico pero leer y escribir.
+## Solution
+Siguiendo el Principio de Segregación de Interfaces, podemos abordar el problema de la interfaz [`ISecurityPermission`](https://github.com/edfern/principios-SOLID/blob/interface-segregation-principle-problem/src/main/java/gt/edu/umg/priciple/solid/model/ISecurityPermission.java)
+la solucion es segregar la interfaz de los usuarios en multiples interfaces de función 
+cada una para un comportamiento específico . En este caso, la interfaz [`ISecurityPermission`](https://github.com/edfern/principios-SOLID/blob/interface-segregation-principle-problem/src/main/java/gt/edu/umg/priciple/solid/model/ISecurityPermission.java)
+se puede dividir en tres interfaces `IAdminPermission`, `IUserPermission` y `ITechnicalPermission`  
 
-![alt text](Class%20Diagram/interface-segregation-principle-PROBLEM.png)
+![alt text](Class%20Diagram/interface-segregation-principle-SOLUTION.png)
 
+Ahora las clases de implementación implementan las interfaces que les interesan y esto ayuda a eliminar el código innecesario y es más legible.
 
-## Problem
-Como pueden ver la clase `UserApp` necesita proporcionar un método `writePermission()` y 
-`deletionPermission()` aunque no los requiera.  Esta es una violación del principio de segregación de interfaces. Estos pueden afectar la legibilidad del código.
+## Conclution
+El principio de segregación de interfaces garantiza componentes de software pequeños, enfocados y altamente cohesivos. El principio de segregación de interfaces es fácil de entender y de seguir. Sin embargo, identificar las distintas interfaces puede ser un desafío para obtener la segregación de roles correcta. El Principio de Segregación de Interfaces es un concepto muy poderoso para dominar al desarrollar aplicaciones Java.

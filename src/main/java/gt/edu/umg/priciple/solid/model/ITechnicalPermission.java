@@ -1,8 +1,6 @@
 package gt.edu.umg.priciple.solid.model;
 
-public interface ISecurityPermission {
+public interface ITechnicalPermission {
     String writePermission();
     String readPermission();
-    String deletionPermission();
-
 }

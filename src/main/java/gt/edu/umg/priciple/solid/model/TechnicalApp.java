@@ -1,6 +1,6 @@
 package gt.edu.umg.priciple.solid.model;
 
-public class TechnicalApp extends Person implements ISecurityPermission{
+public class TechnicalApp extends Person implements ITechnicalPermission{
 
 
     private String gmail;
@@ -28,8 +28,4 @@ public class TechnicalApp extends Person implements ISecurityPermission{
         return "READ";
     }
 
-    @Override
-    public String deletionPermission() {
-        return null;
-    }
 }
