@@ -6,11 +6,13 @@ _La inversión de dependencia sugiere cambiar ("invertir") esta relación. En lu
 ## Problem
 Para demostrar este principio veamos el problema.
 
-Demos vida a un automóvil creamos las clases [`Car`](principios-SOLID/blob/dependency-inversion-principle-problem/src/main/java/gt/edu/umg/priciple/solid/model/Car.java), `SeatingStandard` y `Tire`.
+Demos vida a un automóvil creamos las clases [`Car`](src/main/java/gt/edu/umg/priciple/solid/model/Car.java), [`SeatingStandard`](src/main/java/gt/edu/umg/priciple/solid/model/SeatingStandard.java) y [`Tire`](src/main/java/gt/edu/umg/priciple/solid/model/Tire.java).
 
 ![alt text](Class%20Diagram/interface-segregation-principle-PROBLEM.png)
 
 Veamos el código:
+
+[`Car.java`](src/main/java/gt/edu/umg/priciple/solid/model/Car.java)
 
 ```java
 private final SeatingStandard seatingStandard;
