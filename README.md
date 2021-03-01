@@ -29,7 +29,7 @@ private final SeatingStandard seatingStandard;
 Este código funcionará y podremos usar [`SeatingStandard`](src/main/java/gt/edu/umg/priciple/solid/model/SeatingStandard.java) y [`Tire`](src/main/java/gt/edu/umg/priciple/solid/model/Tire.java) en nuestra
 clase [`Car`](src/main/java/gt/edu/umg/priciple/solid/model/Car.java).
 
-Al declarar [`SeatingStandard`](src/main/java/gt/edu/umg/priciple/solid/model/SeatingStandard.java) y [`Tire`](src/main/java/gt/edu/umg/priciple/solid/model/Tire.java)) con la palabra **_new_** hemos unido estrechamente
+Al declarar [`SeatingStandard`](src/main/java/gt/edu/umg/priciple/solid/model/SeatingStandard.java) y [`Tire`](src/main/java/gt/edu/umg/priciple/solid/model/Tire.java) con la palabra **_new_** hemos unido estrechamente
 las tres clases.
 
 Es simple, esto hace que nuestro vehículo sea difícil de probar sino que también
