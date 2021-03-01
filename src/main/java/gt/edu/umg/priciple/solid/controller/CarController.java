@@ -6,14 +6,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PermissionController {
+public class CarController {
 
     /**
-     * Este Controlador muestra que permisos tiene cada usuario de
-     * la aplicación
+     * Muestra las partes de un automóvil
      */
 
-    public PermissionController() {
+    public CarController() {
     }
     @GetMapping("/carVehicle")
     public String getFileJson() {
