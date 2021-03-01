@@ -1,37 +1,41 @@
-# Dependency Inversion Principle PROBLEM
+# Dependency Inversion Principle SOLUTION
 
 _La inversión de dependencia sugiere cambiar ("invertir") esta relación. En lugar de hacer referencia directa al módulo de bajo nivel, se debe hacer referencia a su abstracción._
 
 
-## Problem
-Para demostrar este principio veamos el problema.
-
-Demos vida a un automóvil creamos las clases [`Car`](src/main/java/gt/edu/umg/priciple/solid/model/Car.java), [`SeatingStandard`](src/main/java/gt/edu/umg/priciple/solid/model/SeatingStandard.java) y [`Tire`](src/main/java/gt/edu/umg/priciple/solid/model/Tire.java).
-
-![alt text](Class%20Diagram/interface-segregation-principle-PROBLEM.png)
-
-Veamos el código:
-
-[`Car.java`](src/main/java/gt/edu/umg/priciple/solid/model/Car.java)
+## Solution
+Desacoplamos nuestro vehículo del [`SeatingStandard`](src/main/java/gt/edu/umg/priciple/solid/model/SeatingStandard.java)
+agregando una interfaz del **_seating_** más general y usándola en nuestra clase:
 
 ```java
-private final SeatingStandard seatingStandard;
-    private final Tire tire;
-    public Car(){
-        seatingStandard = new SeatingStandard();
-        tire = new Tire();
+public interface ISeating {
+}
+```
+
+```java
+public class Car {
+
+    private final ISeating iSeating;
+    private final ITire tire;
+    public Car(ISeating iSeating, ITire iTire){
+        this.iSeating = iSeating;
+        this.tire = iTire;
     }
+    //Crea el automóvil y muestra sus partes.
     public String carVehicle(){
-        return "Su vehículo esta conformado con estas partes: <br>"+seatingStandard.getName()+"<br>"+tire.getName();
+        return "Su vehículo esta conformado con estas partes: <br>"+iSeating.getName()+"<br>"+tire.getName();
     }
-``` 
+}
 
-Este código funcionará y podremos usar [`SeatingStandard`](src/main/java/gt/edu/umg/priciple/solid/model/SeatingStandard.java) y [`Tire`](src/main/java/gt/edu/umg/priciple/solid/model/Tire.java) en nuestra
-clase [`Car`](src/main/java/gt/edu/umg/priciple/solid/model/Car.java).
+```
+También modificamos la clase [`SeatingStandard`](src/main/java/gt/edu/umg/priciple/solid/model/SeatingStandard.java) para implementar la interfaz
+del **_ITire_** para que sea adecuada inyectar en la clase [`Car`](src/main/java/gt/edu/umg/priciple/solid/model/Car.java).
 
-Al declarar [`SeatingStandard`](src/main/java/gt/edu/umg/priciple/solid/model/SeatingStandard.java) y [`Tire`](src/main/java/gt/edu/umg/priciple/solid/model/Tire.java) con la palabra **_new_** hemos unido estrechamente
-las tres clases.
+```java
+public class SeatingStandard implements ISeating{
+}
+```
+Ahora nuestras clases están desacopladas y se comunican a través de la abstracción
+_ISeating_.
 
-Es simple, esto hace que nuestro vehículo sea difícil de probar sino que también
-hace que nuestra clase [`SeatingStandard`](src/main/java/gt/edu/umg/priciple/solid/model/SeatingStandard.java) sea complicado cambiar por una clase diferente en el 
-caso de que surja la necesidad.   
+Si queremos, podemos cambiar fácilmente el tipo de asientos en nuestro vehículo con una implementación diferente de la interfaz. Podemos seguir el mismo principio para la clase _Tire_.
