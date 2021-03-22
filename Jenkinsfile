@@ -7,9 +7,7 @@ pipeline{
 					sh 'pwd'
 					sh 'mvn package'
 				}
-				echo {
-					'Compilacion finalizada exitosamente'
-				}
+				echo 'Compilacion finalizada exitosamente'
 			} 
 		}
 	}
