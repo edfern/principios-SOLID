@@ -16,7 +16,7 @@ pipeline{
 					scannerHome = tool 'sonarQubeScanner'
 				}
 				withSonarQubeEnv('sonaServer'){
-					sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=testNumber1 -Dsonar.projectVersion=1.0 -Dsonar.sources=. -Dsonar.java.binaries=./target/classes -Dsonar.login=e3dc282d596dbdfbf622302bfda377a28143a4b6"
+					sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=testNumber1 -Dsonar.projectVersion=1.0 -Dsonar.sources=. -Dsonar.java.binaries=./target/classes -Dsonar.login=d0a2ab8ac86e73a2984ed04b9118ef3691250fd9"
 				}
 			}
 		}
